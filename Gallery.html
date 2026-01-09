@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dish &amp; Interior Gallery | La Trattoria</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&amp;family=Noto+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#cf1736",
+                        "gold": "#D4AF37",
+                        "background-light": "#FFFAF0",
+                        "background-dark": "#211114",
+                    },
+                    fontFamily: {
+                        "display": ["Noto Serif", "serif"],
+                        "sans": ["Noto Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .gold-frame {
+            border: 1px solid #D4AF37;
+            box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.1);
+        }
+        .masonry {
+            column-count: 3;
+            column-gap: 1.5rem;
+        }
+        @media (max-width: 1024px) {
+            .masonry { column-count: 2; }
+        }
+        @media (max-width: 640px) {
+            .masonry { column-count: 1; }
+        }
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 1.5rem;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display min-h-screen text-[#181112] dark:text-white transition-colors duration-300">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-sm border-b border-solid border-primary/10 px-6 lg:px-40 py-4">
+<div class="max-w-[1200px] mx-auto flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="text-primary">
+<span class="material-symbols-outlined text-4xl">restaurant</span>
+</div>
+<h2 class="text-[#181112] dark:text-white text-2xl font-bold tracking-tight uppercase">La Trattoria</h2>
+</div>
+<nav class="hidden md:flex items-center gap-10">
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Menu</a>
+<a class="text-sm font-bold border-b-2 border-primary text-primary" href="#">Gallery</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Reservations</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">About</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="bg-primary hover:bg-primary/90 text-white px-6 py-2 rounded-lg text-sm font-bold transition-all shadow-lg shadow-primary/20">
+                    Book a Table
+                </button>
+<button class="p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/5 transition-colors">
+<span class="material-symbols-outlined">search</span>
+</button>
+</div>
+</div>
+</header>
+<main class="max-w-[1200px] mx-auto px-6 lg:px-10 py-12">
+<!-- Hero Section -->
+<div class="text-center mb-12">
+<div class="flex justify-center items-center gap-4 mb-4">
+<div class="h-[1px] w-12 bg-gold/50"></div>
+<span class="text-gold uppercase tracking-[0.3em] text-xs font-bold">Est. 1982</span>
+<div class="h-[1px] w-12 bg-gold/50"></div>
+</div>
+<h1 class="text-[#181112] dark:text-white text-5xl font-bold mb-4">Our Gallery</h1>
+<p class="text-[#886369] dark:text-gray-400 max-w-2xl mx-auto italic text-lg leading-relaxed">
+                Discover the soul of Roman culinary tradition and our warm Mediterranean spaces. Each dish tells a story of heritage, and every corner of our home is designed for celebration.
+            </p>
+</div>
+<!-- Filter Chips -->
+<div class="flex justify-center gap-3 mb-16 flex-wrap">
+<button class="px-6 py-2 rounded-full bg-primary text-white text-sm font-medium shadow-md">All Photos</button>
+<button class="px-6 py-2 rounded-full bg-white dark:bg-background-dark/50 border border-gold/30 hover:border-gold text-sm font-medium transition-colors">The Restaurant</button>
+<button class="px-6 py-2 rounded-full bg-white dark:bg-background-dark/50 border border-gold/30 hover:border-gold text-sm font-medium transition-colors">Antipasti</button>
+<button class="px-6 py-2 rounded-full bg-white dark:bg-background-dark/50 border border-gold/30 hover:border-gold text-sm font-medium transition-colors">Main Courses</button>
+<button class="px-6 py-2 rounded-full bg-white dark:bg-background-dark/50 border border-gold/30 hover:border-gold text-sm font-medium transition-colors">Desserts</button>
+<button class="px-6 py-2 rounded-full bg-white dark:bg-background-dark/50 border border-gold/30 hover:border-gold text-sm font-medium transition-colors">Wine Cellar</button>
+</div>
+<!-- Masonry Gallery -->
+<div class="masonry">
+<!-- Item 1 -->
+<div class="masonry-item group cursor-pointer">
+<div class="gold-frame rounded-lg overflow-hidden relative">
+<img class="w-full h-auto transition-transform duration-700 group-hover:scale-105" data-alt="Elegant warmly lit Italian dining room interior" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLW1LzoYHX0bZaFIH8Bxjry8a9QLX97qFT51qrwzooPis5Pui97XF-T8N0XBsTWC4ezxDuVHMDjyIGyiVzfrRK0ULFzGQZuDT9HOPViOn0YpFLwRW1Amv8dI9gp6GQl2bv5T4tx2r8z5fuJLEysabVepaUygD6ttsT6QC0gxfjEGprY9WzUXyu3iYlZdYPYki3GODKIlWo763aXc0QCSU1wMibqHXCENSHemlku_2UgOoG2sWiKMgGKGjnE05yeencksV0U0ii6Q"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
+<p class="text-white text-xl font-bold">The Main Dining Hall</p>
+<p class="text-white/80 text-sm italic">Atmospheric evenings</p>
+</div>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="masonry-item group cursor-pointer">
+<div class="gold-frame rounded-lg overflow-hidden relative">
+<img class="w-full h-auto transition-transform duration-700 group-hover:scale-105" data-alt="Hand-rolled fresh pasta with herbs" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzuBnMDgMIpJofhtIxRmiw3tILSRLPby72GVUXt6F1jhYdMHjL8qZW0cLN6EddEUqYqS5g70EaG7Jmgmb9hSV19gKoBaJEptrV4URS5XmhnmD0qT9TNN62g0Fcp5z1Jqbjhb1I3yg8n0e7nIw4vr0mXPNqJ_iLaskLZN2GiH6EDwFYOAyGjkMUO5fCYGGljVGKV8abN_Q6On_xE2_9GUwzgPxiC_g2hUZcs_WjKtL_EP1UmZEvPswSQiZAwEds6C0dYmWOmCM-hA"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
+<p class="text-white text-xl font-bold">Hand-Rolled Pasta</p>
+<p class="text-white/80 text-sm italic">Crafted daily by hand</p>
+</div>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="masonry-item group cursor-pointer">
+<div class="gold-frame rounded-lg overflow-hidden relative">
+<img class="w-full h-auto transition-transform duration-700 group-hover:scale-105" data-alt="Rustic underground wine cellar with oak barrels" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFmioLzfXiNEAyARF_GjlVBBAkmNewWf9skSsJoN9hYd4rvat4rY_ip4lsFPpa_C9k72RUSwmfNBtMgmwo41n-FXO6q_4QqHExkS8X2Pun2RcLEG00qSLqj7_jX1PZePzXvjOSwx-J21OaHyNs48rw1xzw5OgGNVqBKQQEenvwp7dV5pysPIH8K6-pbon7GhqpYu7HipvPwPvxdCaSeyhVofp4Gg5GQqwGFlDoaeJP06YF_AoT343j9Eez4nvOi5p5A3AfX7zovA"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
+<p class="text-white text-xl font-bold">The Riserva Cellar</p>
+<p class="text-white/80 text-sm italic">Rare vintages &amp; aged spirits</p>
+</div>
+</div>
+</div>
+<!-- Item 4 -->
+<div class="masonry-item group cursor-pointer">
+<div class="gold-frame rounded-lg overflow-hidden relative">
+<img class="w-full h-auto transition-transform duration-700 group-hover:scale-105" data-alt="Braised osso buco with saffron risotto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDai8iX4OT-Lk1yBYm2C4MUxUMUE76-ukcH78gpkhF8CRyr-WzN9vQqm-22QoN8aHMsz6kjwQiQ03-RRey0aKACgGbkW2u1XJCIJfkUcuwH_95o3-2kiajMjKMe6z6mcPYOWF68tKOePicAy8RPC9Fmt0jrEh-SlKkjPw89H8_QSJv-yYjKtHd_oaLvNS0n105tbr4JmvgPlAJIdKhJT9ljnUEsi0-fHcozXTElET9X6gN3Gimr6FntfZRPPK2KEL250rrQaHLtWA"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
+<p class="text-white text-xl font-bold">Signature Osso Buco</p>
+<p class="text-white/80 text-sm italic">Slow-cooked Roman classic</p>
+</div>
+</div>
+</div>
+<!-- Item 5 -->
+<div class="masonry-item group cursor-pointer">
+<div class="gold-frame rounded-lg overflow-hidden relative">
+<img class="w-full h-auto transition-transform duration-700 group-hover:scale-105" data-alt="Sun-drenched Mediterranean outdoor patio" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNQWtFQIEzaq-2GdoXAd8YnvpL8jad0XEqbeDWE3ccfITPuvFS1orCOxu8_i6zcOgPlXCqrOfxZTO3PtlPYtz-d3eGz-APLr-WgTeyaF_ys7iQBax43fwqWrtQqezhSlP3EsURcAD9UFlMn6sxAcsX4OukwVJXJ4oVL1sDcu8yWFHyYKJrhE2rqYAWbXcFHO0eekX1n9D8IHGOY59lnnDq_bpJxhY5BgZc6hoFwnMe1c6ul0GMUU3TCFr3bmKgwL6MpHIJxUSgYw"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
+<p class="text-white text-xl font-bold">Terrazza Garden</p>
+<p class="text-white/80 text-sm italic">Al fresco dining</p>
+</div>
+</div>
+</div>
+<!-- Item 6 -->
+<div class="masonry-item group cursor-pointer">
+<div class="gold-frame rounded-lg overflow-hidden relative">
+<img class="w-full h-auto transition-transform duration-700 group-hover:scale-105" data-alt="Artisanal tiramisu with cocoa dusting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkiyc6u_EuOa_yjzPEdKW3B1CDWp7GdJ2nkrRjZiJyKiRUBinLRvcmYf5czlW3V93Tkczs1AwN0PVW_rplMTmrAw1LlTHJ0WtHWpHRlYgoKibKv51GEeM4idtWWt1gozZhshQuqL7KCZdI7jU-lL8GteaiR5cBl4-DNUbtxYlcvXLyyvZ5dag3Q4Wz_0jDR3mOw9e82HJ62zuKcM6yVmN4UWPK3vhyJ9bKtxbOxgpSbpf5VwnimEmdBDgW7cqSupe_jM6i0yBKJg"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
+<p class="text-white text-xl font-bold">Classic Tiramisu</p>
+<p class="text-white/80 text-sm italic">A sweet conclusion</p>
+</div>
+</div>
+</div>
+<!-- Item 7 -->
+<div class="masonry-item group cursor-pointer">
+<div class="gold-frame rounded-lg overflow-hidden relative">
+<img class="w-full h-auto transition-transform duration-700 group-hover:scale-105" data-alt="Mediterranean seafood platter with lemon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBANix_JhDYyEpUPS7KUTD7TYgdlUGUgFZcxBYiCRTJBCJaINosOfSB5bbT3pb_bjqQ4ijmURfuak6A1khRwM0gph-0EdsqZCR81iRp0zqbX_oymJj5YoUNMWY3BMCECrWpok5yAdnvxrQxLsZt83rwtuHzybs7-DDrG6XzJU5vGlzqESwFt6kc0t3K-rjXkJgGYnNseyl3An-DR2aSSzTpwK-PiiUdhFMXDTLRAJoPGDVJqOhwp3dOsjnxuz6vp6D-ZOLe0OsUw"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
+<p class="text-white text-xl font-bold">Frutti di Mare</p>
+<p class="text-white/80 text-sm italic">Fresh from the Amalfi coast</p>
+</div>
+</div>
+</div>
+<!-- Item 8 -->
+<div class="masonry-item group cursor-pointer">
+<div class="gold-frame rounded-lg overflow-hidden relative">
+<img class="w-full h-auto transition-transform duration-700 group-hover:scale-105" data-alt="Private lounge area with velvet chairs" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwUylb95v2MhyXJeHS5fDomlusx6YROQ5JQts3dJm05GRPo8Moz49Ta4iUTxSLYpGUGq9FOj8dWyv7KgWm-HutK8QJ2WKER92UAI3n44gVW8229Pb6HrS5jf-JQ23dpGe9QDL_EeEky5YZHAE1R3RsTJWinjmJ3Se-C65C9sNkchNZmRcpzHaopkWWBa7juyDfPqrw13cQK2THudnxoMq-1CL84YgRsgIFmS0u6UunykgjF3zRIehbrGBCz2MxZ8v3zSu-Ae5clw"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
+<p class="text-white text-xl font-bold">Private Lounge</p>
+<p class="text-white/80 text-sm italic">Exclusive gatherings</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Pagination/Load More -->
+<div class="mt-20 flex flex-col items-center">
+<div class="flex items-center gap-4 mb-6">
+<div class="size-2 rounded-full bg-gold"></div>
+<div class="size-2 rounded-full bg-gold/30"></div>
+<div class="size-2 rounded-full bg-gold/30"></div>
+</div>
+<button class="flex items-center gap-2 text-primary font-bold hover:gap-4 transition-all">
+                VIEW MORE MEMORIES
+                <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-primary text-white mt-24 py-16 px-6 lg:px-40">
+<div class="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
+<div>
+<h3 class="text-2xl font-bold mb-6">La Trattoria</h3>
+<p class="text-white/80 italic mb-6">Traditional Italian dining in the heart of the city.</p>
+<div class="flex gap-4">
+<span class="material-symbols-outlined cursor-pointer hover:text-gold transition-colors">social_leaderboard</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-gold transition-colors">camera_alt</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-gold transition-colors">alternate_email</span>
+</div>
+</div>
+<div>
+<h4 class="font-bold mb-6 uppercase tracking-wider">Contact</h4>
+<p class="text-white/80 mb-2">123 Via Roma, Italian Quarter</p>
+<p class="text-white/80 mb-2">+1 (555) 123-4567</p>
+<p class="text-white/80">ciao@latrattoria.com</p>
+</div>
+<div>
+<h4 class="font-bold mb-6 uppercase tracking-wider">Newsletter</h4>
+<p class="text-white/80 mb-4">Join our list for exclusive wine tastings and event invites.</p>
+<div class="flex gap-2">
+<input class="bg-white/10 border-white/20 rounded-lg px-4 py-2 flex-grow focus:outline-none focus:ring-1 focus:ring-gold text-white placeholder:text-white/50" placeholder="Email address" type="email"/>
+<button class="bg-gold hover:bg-gold/90 text-[#181112] font-bold px-4 py-2 rounded-lg transition-colors">Sign Up</button>
+</div>
+</div>
+</div>
+<div class="max-w-[1200px] mx-auto border-t border-white/10 mt-16 pt-8 text-center text-white/50 text-xs">
+            © 2024 La Trattoria. All rights reserved. | Terms &amp; Privacy
+        </div>
+</footer>
+<!-- Floating Action Button -->
+<div class="fixed bottom-8 right-8 z-50">
+<button class="group relative flex items-center justify-center size-14 bg-primary text-white rounded-full shadow-2xl hover:scale-110 transition-transform active:scale-95">
+<span class="material-symbols-outlined">calendar_month</span>
+<span class="absolute right-full mr-4 bg-background-dark text-white px-4 py-2 rounded-lg text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none font-sans">
+                Book a Table
+            </span>
+</button>
+</div>
+</body></html>
