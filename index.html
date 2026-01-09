@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>La Trattoria | Authentic Italian Dining</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Noto+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#cf1736",
+                        "accent-gold": "#C5A059",
+                        "background-light": "#FDFCFB",
+                        "background-dark": "#211114",
+                        "stone-soft": "#f4f0f1",
+                    },
+                    fontFamily: {
+                        "display": ["Noto Serif", "serif"],
+                        "sans": ["Noto Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Noto Sans', sans-serif;
+        }
+        h1, h2, h3, .font-serif {
+            font-family: 'Noto Serif', serif;
+        }
+        .sticky-nav {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            backdrop-filter: blur(8px);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#181112] dark:text-white">
+<!-- Top Navigation Bar -->
+<header class="sticky-nav bg-background-light/90 dark:bg-background-dark/90 border-b border-solid border-stone-soft dark:border-white/10 px-6 lg:px-20 py-4">
+<div class="max-w-[1280px] mx-auto flex items-center justify-between whitespace-nowrap">
+<div class="flex items-center gap-3 text-primary">
+<span class="material-symbols-outlined text-3xl">restaurant</span>
+<h2 class="text-[#181112] dark:text-white text-2xl font-bold leading-tight tracking-tight font-display">La Trattoria</h2>
+</div>
+<div class="hidden md:flex flex-1 justify-end gap-10 items-center">
+<nav class="flex items-center gap-8">
+<a class="text-[#181112] dark:text-white text-sm font-medium hover:text-primary transition-colors uppercase tracking-widest" href="#">Menu</a>
+<a class="text-[#181112] dark:text-white text-sm font-medium hover:text-primary transition-colors uppercase tracking-widest" href="Gallery.html">Gallery</a>
+<a class="text-[#181112] dark:text-white text-sm font-medium hover:text-primary transition-colors uppercase tracking-widest" href="#">Reservations</a>
+</nav>
+<button class="flex min-w-[140px] cursor-pointer items-center justify-center rounded-lg h-11 px-5 bg-primary text-white text-sm font-bold tracking-widest uppercase hover:bg-primary/90 transition-all shadow-lg">
+<span>Book a Table</span>
+</button>
+</div>
+<!-- Mobile Menu Icon -->
+<div class="md:hidden flex items-center">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</div>
+</div>
+</header>
+<!-- Hero Section -->
+<main>
+<section class="relative w-full h-[85vh] overflow-hidden flex items-center justify-center">
+<!-- Simulated Video Background with Overlay -->
+<div class="absolute inset-0 w-full h-full bg-center bg-cover" data-alt="Cinematic shot of fresh pasta being handmade by a chef" style='background-image: linear-gradient(rgba(33, 17, 20, 0.6), rgba(33, 17, 20, 0.7)), url("https://lh3.googleusercontent.com/aida-public/AB6AXuA3E7OmXQG_ZrMVPnjJrcJpyJjhcVHGVr4Qwo2SofeNgEiawpmLDwYCbXym5lv-hBQyBQX9FdeM4qzJaB2TjqQkncr2Ork_76TgJ8ayxW1CAb4bj_eaR_lt7SunoPJUGhKVWmpdYrojJPPvQ-x4wDj9vRZR4yKDUuS1ByWm-eIvWufJTgD73HQ3VXeRVQY9-x9IfvXWYUVYaQy4v5vuNmMPSX2xN-fP2d_QVjl7QYe2-50oPYvJU2Xf6pwX5vvC6pq3lLxMFx9jDg");'>
+</div>
+<div class="relative z-10 text-center px-6 max-w-4xl mx-auto flex flex-col gap-8 items-center">
+<div class="flex flex-col gap-4">
+<span class="text-accent-gold text-sm font-bold uppercase tracking-[0.4em] font-sans">Dal 1984</span>
+<h1 class="text-white text-5xl md:text-7xl font-bold leading-tight tracking-tight font-display italic">
+                        The Art of Authentic <br/> Italian Dining
+                    </h1>
+<p class="text-white/90 text-lg md:text-xl font-normal leading-relaxed max-w-2xl mx-auto font-display italic">
+                        Experience the true spirit of the Mediterranean with handcrafted pasta, vintage wines, and timeless heritage.
+                    </p>
+</div>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="min-w-[200px] h-14 px-8 bg-primary text-white text-sm font-bold tracking-[0.2em] uppercase rounded-lg hover:scale-105 transition-transform shadow-xl">
+                        Reserve Your Table
+                    </button>
+<button class="min-w-[200px] h-14 px-8 border-2 border-white text-white text-sm font-bold tracking-[0.2em] uppercase rounded-lg hover:bg-white hover:text-primary transition-all">
+                        View Menu
+                    </button>
+</div>
+</div>
+<!-- Floating Scroll Indicator -->
+<div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/60">
+<span class="text-[10px] uppercase tracking-[0.3em]">Scroll</span>
+<span class="material-symbols-outlined animate-bounce">expand_more</span>
+</div>
+</section>
+<!-- Our Story Section -->
+<section class="py-24 px-6 lg:px-20 bg-background-light dark:bg-background-dark">
+<div class="max-w-[1100px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="flex flex-col gap-8">
+<div class="flex flex-col gap-4">
+<span class="text-primary text-sm font-bold uppercase tracking-[0.2em]">Our Heritage</span>
+<h2 class="text-[#181112] dark:text-white text-4xl md:text-5xl font-bold leading-tight font-display">
+                            A Legacy of Flavor
+                        </h2>
+<div class="w-20 h-1 bg-accent-gold"></div>
+</div>
+<p class="text-[#181112]/80 dark:text-white/80 text-lg leading-relaxed font-display italic">
+                        "In our kitchen, time is the secret ingredient. Every recipe is a dialogue between generations, a tribute to the sun-drenched coastlines of Italy and the rich soil of our ancestors."
+                    </p>
+<p class="text-[#181112]/70 dark:text-white/70 text-base leading-relaxed">
+                        Rooted in tradition, La Trattoria brings the warmth of Italian hospitality and the freshness of Mediterranean ingredients to your table. We source our flour from the hills of Tuscany and our olives from the heart of Puglia to ensure every bite tells a story.
+                    </p>
+<div class="grid grid-cols-2 gap-6 pt-4">
+<div class="flex flex-col">
+<span class="text-3xl font-display text-primary font-bold">40+</span>
+<span class="text-xs uppercase tracking-widest text-[#181112]/60 dark:text-white/60">Years of Tradition</span>
+</div>
+<div class="flex flex-col">
+<span class="text-3xl font-display text-primary font-bold">120</span>
+<span class="text-xs uppercase tracking-widest text-[#181112]/60 dark:text-white/60">Curated Wines</span>
+</div>
+</div>
+</div>
+<div class="relative">
+<div class="aspect-[4/5] rounded-xl overflow-hidden shadow-2xl relative z-10" data-alt="Classic Italian outdoor dining setting with white linens" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAo6EwaPxrD3uiGM7tP-J3cF8oiqswq8QHm40dbgoHKWcCvXhlVe8UXyAE-7sIEu1XxgsUlSGhE1i7cQq7Faskfz0Ic6sZka7zrrXiowiiK3QYGS0nipYkMQ-sYX3zJon5ROX4rgYIE21uxOis59YqgUR4q2FQPmQiWZrIKn8fQCxq6DAxe3iBw_fcdX85Z4sbCcqRmeNcDfv8PbmdR-EH-0pfviqmnL-dyAwvWw1xWv-fuN6DkkbGMBkiMaStrT-ILGcOjwKzhNg"); background-size: cover;'></div>
+<div class="absolute -bottom-6 -right-6 w-full h-full border-2 border-accent-gold rounded-xl -z-0"></div>
+</div>
+</div>
+</section>
+<!-- Signature Dishes -->
+<section class="py-24 bg-[#FAF9F6] dark:bg-[#1a0d10] border-y border-stone-soft dark:border-white/5">
+<div class="px-6 lg:px-20 max-w-[1280px] mx-auto">
+<div class="flex justify-between items-end mb-12">
+<div class="flex flex-col gap-2">
+<span class="text-primary text-xs font-bold uppercase tracking-[0.3em]">The Selection</span>
+<h2 class="text-[#181112] dark:text-white text-3xl md:text-4xl font-bold font-display italic">Signature Dishes</h2>
+</div>
+<a class="text-primary font-bold text-sm uppercase tracking-widest flex items-center gap-2 hover:gap-4 transition-all group" href="#">
+                        Full Menu <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+<div class="flex overflow-x-auto gap-8 pb-8 no-scrollbar scroll-smooth">
+<!-- Item 1 -->
+<div class="flex-none w-[350px] group cursor-pointer">
+<div class="relative h-[450px] rounded-xl overflow-hidden mb-6 shadow-lg">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Hand-rolled pappardelle pasta with rich meat ragu" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDlQE4bOWk-bhoC3cffC6dkg_qPGNESeXyG39BgDqFDiUdFiBx_cdSp9noXHS78mrlNAwqWZljr-S4ktgJFJBjOkjYbhwIaihMyufTUjRVSj2KCFsqdt4eUsmaFh6ENJDaTiQS8IF70jewV4843xW9hD9GphjKlJFOnJTqtSDellzkh_ktEjSVzzvNP8vLNb1vvx6OU9sUDOHsnWnCvRCiiT_XhJ22Wuq-sr6gSI0MkT2o3JwvY8KrzcuLaJuA7f99T4v7iYH96NA");'></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-6 left-6 text-white">
+<span class="bg-primary/90 text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-2 inline-block">Best Seller</span>
+<h3 class="text-2xl font-display font-bold">Pappardelle al Ragu</h3>
+</div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<p class="text-[#181112] dark:text-white font-medium text-lg">Hand-Rolled Pappardelle</p>
+<p class="text-[#886369] dark:text-white/60 text-sm">Slow-cooked wild boar ragu, pecorino toscano.</p>
+</div>
+<p class="text-primary font-bold text-lg">$28</p>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="flex-none w-[350px] group cursor-pointer">
+<div class="relative h-[450px] rounded-xl overflow-hidden mb-6 shadow-lg">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Osso buco served over a bed of golden saffron risotto" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAaWXjiqDT-hqqyhlsGP2AIEY8LeM7XGWQvFdFLOBgd4t3ip1Ytvl4OHQy4J3WOhRDiQtPTsvGFHdBY5CN-bXwwSmX85zljDIQ4hg4fOrRFZN69IsKU6gLKIwtmFHrDfJT3zZgGMS68YZfJ3M6SVmyp4aYFW2dcnH-cEyF7sH2fitvdtxUpcDJi3bVdX1Rdjg-TThWfd99vhTk2zmFc-WUKBjoqhtc8lSbBx2VVdvPYAC-98S5aKF-Ld1U1b6D2GOv4N-ZQ6zCEfw");'></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-6 left-6 text-white">
+<h3 class="text-2xl font-display font-bold">Osso Buco</h3>
+</div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<p class="text-[#181112] dark:text-white font-medium text-lg">Osso Buco alla Milanese</p>
+<p class="text-[#886369] dark:text-white/60 text-sm">Braised veal shanks, saffron risotto, gremolata.</p>
+</div>
+<p class="text-primary font-bold text-lg">$42</p>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="flex-none w-[350px] group cursor-pointer">
+<div class="relative h-[450px] rounded-xl overflow-hidden mb-6 shadow-lg">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Modern plated tiramisu with cocoa powder dusting" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCy161g5sGteaNnBGXPYEgtSq7b1HBp0imRf2D8KE-c5FrADqYteApMAuU66xUjeDT08GnD7bMJau99QVMmbvrRI3XGcaLCb-tOyVTBvhsLdI0zJDtf_d7_qfWhM6yyEUeglDhDPCDu5Fgte2FnhPFCd0HIdhyuhZQMFKnqKvSDB9ckw-I8T3ntVt9QE0DtbmhDzVnpeCAqgomquBk65tISecq9cDaXDxh5pJii2ZTEIfWqCM-p4AnyUEMWPT4809WpeY-2JswSEA");'></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-6 left-6 text-white">
+<h3 class="text-2xl font-display font-bold">Signature Tiramisu</h3>
+</div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<p class="text-[#181112] dark:text-white font-medium text-lg">Authentic Tiramisu</p>
+<p class="text-[#886369] dark:text-white/60 text-sm">Mascarpone, espresso-soaked ladyfingers.</p>
+</div>
+<p class="text-primary font-bold text-lg">$14</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Reservation CTA -->
+<section class="py-24 px-6 relative overflow-hidden">
+<div class="absolute inset-0 bg-primary/5 dark:bg-primary/10"></div>
+<div class="max-w-4xl mx-auto text-center relative z-10">
+<span class="material-symbols-outlined text-primary text-5xl mb-6">calendar_month</span>
+<h2 class="text-[#181112] dark:text-white text-4xl md:text-5xl font-bold font-display italic mb-6">Join us for an unforgettable evening</h2>
+<p class="text-[#181112]/70 dark:text-white/70 text-lg mb-10 max-w-2xl mx-auto">
+                    Whether it's a romantic dinner or a family gathering, we provide the perfect ambiance and authentic flavors of Italy.
+                </p>
+<button class="bg-primary text-white h-16 px-12 rounded-lg font-bold uppercase tracking-widest text-sm hover:bg-primary/90 transition-all shadow-xl hover:scale-105 active:scale-95">
+                    Book Your Table Now
+                </button>
+<p class="mt-8 text-sm font-medium text-[#181112]/50 dark:text-white/50">
+                    Or call us directly at <span class="text-primary font-bold">+1 (555) 123-4567</span>
+</p>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#181112] dark:bg-black text-white py-16 px-6 lg:px-20 border-t border-white/5">
+<div class="max-w-[1280px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+<div class="flex flex-col gap-6">
+<div class="flex items-center gap-3 text-primary">
+<span class="material-symbols-outlined text-3xl">restaurant</span>
+<h2 class="text-white text-2xl font-bold font-display italic">La Trattoria</h2>
+</div>
+<p class="text-white/60 text-sm leading-relaxed">
+                    Bringing the timeless recipes of the Mediterranean to your city. Experience elegance, tradition, and hospitality.
+                </p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-lg">public</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-lg">share</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-lg">local_library</span>
+</a>
+</div>
+</div>
+<div class="flex flex-col gap-6">
+<h3 class="text-accent-gold font-bold uppercase tracking-widest text-xs">Hours</h3>
+<ul class="flex flex-col gap-3 text-sm text-white/70">
+<li class="flex justify-between"><span>Mon - Thu</span> <span>17:00 - 22:00</span></li>
+<li class="flex justify-between"><span>Fri - Sat</span> <span>17:00 - 23:00</span></li>
+<li class="flex justify-between"><span>Sunday</span> <span>12:00 - 21:00</span></li>
+</ul>
+</div>
+<div class="flex flex-col gap-6">
+<h3 class="text-accent-gold font-bold uppercase tracking-widest text-xs">Contact</h3>
+<ul class="flex flex-col gap-3 text-sm text-white/70">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-lg">location_on</span>
+<span>123 Mediterranean Way,<br/>Porto Bella, FL 33101</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-lg">call</span>
+<span>+1 (555) 123-4567</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-lg">mail</span>
+<span>ciao@latrattoria.com</span>
+</li>
+</ul>
+</div>
+<div class="flex flex-col gap-6">
+<h3 class="text-accent-gold font-bold uppercase tracking-widest text-xs">Newsletter</h3>
+<p class="text-sm text-white/60">Subscribe for special events and seasonal menus.</p>
+<div class="flex">
+<input class="bg-white/5 border-none focus:ring-1 focus:ring-primary rounded-l-lg w-full text-sm" placeholder="Email Address" type="email"/>
+<button class="bg-primary px-4 rounded-r-lg hover:bg-primary/90 transition-colors">
+<span class="material-symbols-outlined">send</span>
+</button>
+</div>
+</div>
+</div>
+<div class="max-w-[1280px] mx-auto mt-16 pt-8 border-t border-white/5 text-center text-white/30 text-xs tracking-widest uppercase">
+            © 2024 La Trattoria Italian Dining. All Rights Reserved.
+        </div>
+</footer>
+</body></html>
