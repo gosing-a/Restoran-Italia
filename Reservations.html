@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Online Table Reservation | La Trattoria</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700;900&amp;family=Noto+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#cf1736", // Maroon
+                        "accent-gold": "#D4AF37", // Gold
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#211114",
+                    },
+                    fontFamily: {
+                        "display": ["Noto Serif", "serif"],
+                        "sans": ["Noto Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Noto Sans', sans-serif;
+        }
+        h1, h2, h3, h4, .font-display {
+            font-family: 'Noto Serif', serif;
+        }
+        .floor-plan-grid {
+            background-image: radial-gradient(#e5dcdd 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#181112] dark:text-white min-h-screen">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<!-- Navigation Bar -->
+<div class="layout-container flex h-full grow flex-col">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-primary/10 px-10 py-3 bg-white dark:bg-background-dark">
+<div class="flex items-center gap-4 text-primary">
+<div class="size-8">
+<svg fill="currentColor" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M42.1739 20.1739L27.8261 5.82609C29.1366 7.13663 28.3989 10.1876 26.2002 13.7654C24.8538 15.9564 22.9595 18.3449 20.6522 20.6522C18.3449 22.9595 15.9564 24.8538 13.7654 26.2002C10.1876 28.3989 7.13663 29.1366 5.82609 27.8261L20.1739 42.1739C21.4845 43.4845 24.5355 42.7467 28.1133 40.548C30.3042 39.2016 32.6927 37.3073 35 35C37.3073 32.6927 39.2016 30.3042 40.548 28.1133C42.7467 24.5355 43.4845 21.4845 42.1739 20.1739Z"></path>
+</svg>
+</div>
+<h2 class="text-primary dark:text-accent-gold text-2xl font-display font-bold leading-tight tracking-[-0.015em]">La Trattoria</h2>
+</div>
+<div class="flex flex-1 justify-end gap-8 items-center">
+<nav class="hidden md:flex items-center gap-9">
+<a class="text-[#181112] dark:text-gray-300 text-sm font-medium hover:text-primary transition-colors" href="#">Menu</a>
+<a class="text-primary text-sm font-bold border-b-2 border-primary" href="#">Reservations</a>
+<a class="text-[#181112] dark:text-gray-300 text-sm font-medium hover:text-primary transition-colors" href="#">Gallery</a>
+<a class="text-[#181112] dark:text-gray-300 text-sm font-medium hover:text-primary transition-colors" href="#">About Us</a>
+</nav>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold shadow-md hover:bg-primary/90 transition-all">
+<span class="truncate">My Account</span>
+</button>
+</div>
+</header>
+<main class="flex-1 flex flex-col md:flex-row max-w-[1440px] mx-auto w-full p-6 lg:p-10 gap-8">
+<!-- Left Column: Reservation Form -->
+<div class="w-full md:w-[400px] flex flex-col gap-6">
+<div class="flex flex-col gap-2">
+<h1 class="text-4xl font-display font-black leading-tight tracking-tight text-primary dark:text-accent-gold">Reserve Your Table</h1>
+<p class="text-[#886369] dark:text-gray-400 text-base">Savor the authentic taste of Italy. Secure your spot in our dining room or terrace.</p>
+</div>
+<div class="bg-white dark:bg-background-dark/50 p-6 rounded-xl border border-primary/10 shadow-sm flex flex-col gap-6">
+<h3 class="text-xl font-display font-bold border-b border-primary/10 pb-3">1. Select Details</h3>
+<!-- Date & Guests -->
+<div class="flex flex-col gap-4">
+<label class="flex flex-col gap-2">
+<span class="text-sm font-bold uppercase tracking-wider text-primary">Reservation Date</span>
+<div class="relative">
+<input class="w-full rounded-lg border-primary/20 bg-background-light dark:bg-background-dark py-3 px-4 focus:ring-primary focus:border-primary" type="text" value="October 24, 2023"/>
+<span class="material-symbols-outlined absolute right-3 top-3 text-primary/60">calendar_month</span>
+</div>
+</label>
+<label class="flex flex-col gap-2">
+<span class="text-sm font-bold uppercase tracking-wider text-primary">Number of Guests</span>
+<div class="relative">
+<select class="w-full rounded-lg border-primary/20 bg-background-light dark:bg-background-dark py-3 px-4 focus:ring-primary focus:border-primary appearance-none">
+<option>2 Guests</option>
+<option selected="">4 Guests</option>
+<option>6 Guests</option>
+<option>8+ Guests (Call us)</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-3 text-primary/60 pointer-events-none">group</span>
+</div>
+</label>
+</div>
+<!-- Time Slots -->
+<div class="flex flex-col gap-3">
+<span class="text-sm font-bold uppercase tracking-wider text-primary">Available Times</span>
+<div class="grid grid-cols-3 gap-2">
+<button class="py-2 px-1 text-xs font-bold border border-primary/20 rounded hover:bg-primary/5 dark:hover:bg-primary/20">18:00</button>
+<button class="py-2 px-1 text-xs font-bold border border-primary/20 rounded hover:bg-primary/5 dark:hover:bg-primary/20">18:30</button>
+<button class="py-2 px-1 text-xs font-bold bg-primary text-white rounded shadow-sm">19:00</button>
+<button class="py-2 px-1 text-xs font-bold border border-primary/20 rounded hover:bg-primary/5 dark:hover:bg-primary/20">19:30</button>
+<button class="py-2 px-1 text-xs font-bold border border-primary/20 rounded hover:bg-primary/5 dark:hover:bg-primary/20 text-gray-400 cursor-not-allowed">20:00</button>
+<button class="py-2 px-1 text-xs font-bold border border-primary/20 rounded hover:bg-primary/5 dark:hover:bg-primary/20">20:30</button>
+</div>
+</div>
+<!-- Summary Card -->
+<div class="mt-4 p-4 rounded-lg bg-primary text-white">
+<div class="flex justify-between items-center mb-2 border-b border-white/20 pb-2">
+<span class="font-display font-bold">Selected Table</span>
+<span class="text-accent-gold font-black">#12</span>
+</div>
+<div class="text-sm opacity-90 flex flex-col gap-1">
+<div class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">event</span> Thursday, Oct 24</div>
+<div class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">schedule</span> 19:00 PM</div>
+<div class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">person</span> 4 People</div>
+</div>
+</div>
+<button class="w-full py-4 bg-accent-gold text-primary font-display font-black text-lg rounded-lg shadow-xl hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-2">
+                            BOOK NOW <span class="material-symbols-outlined">restaurant</span>
+</button>
+</div>
+</div>
+<!-- Right Column: Interactive Floor Plan -->
+<div class="flex-1 flex flex-col gap-6">
+<div class="bg-white dark:bg-background-dark/50 rounded-xl border border-primary/10 shadow-sm p-8 flex flex-col h-full min-h-[600px]">
+<div class="flex items-center justify-between mb-8">
+<div class="flex flex-col">
+<h3 class="text-2xl font-display font-bold">2. Select Your Table</h3>
+<p class="text-sm text-gray-500">Click on a highlighted table to select it.</p>
+</div>
+<!-- Legend -->
+<div class="flex gap-4 text-xs font-bold uppercase tracking-tighter">
+<div class="flex items-center gap-2">
+<div class="w-4 h-4 rounded-sm bg-primary/20 border border-primary/40"></div> Available
+                                </div>
+<div class="flex items-center gap-2">
+<div class="w-4 h-4 rounded-sm bg-accent-gold border border-accent-gold"></div> Selected
+                                </div>
+<div class="flex items-center gap-2">
+<div class="w-4 h-4 rounded-sm bg-gray-300 dark:bg-gray-700"></div> Occupied
+                                </div>
+</div>
+</div>
+<!-- Floor Plan Visualizer -->
+<div class="flex-1 floor-plan-grid rounded-xl border border-dashed border-primary/20 relative overflow-hidden bg-background-light/30">
+<!-- Area Labels -->
+<div class="absolute top-4 left-4 text-primary/40 font-display font-bold italic">Main Dining Hall</div>
+<div class="absolute top-4 right-4 text-primary/40 font-display font-bold italic">Al Fresco Terrace</div>
+<div class="absolute bottom-4 left-4 text-primary/40 font-display font-bold italic">Private Booths</div>
+<!-- Interactive Tables (SVG or Div based) -->
+<div class="absolute inset-0 p-12 grid grid-cols-4 grid-rows-3 gap-12">
+<!-- Row 1 -->
+<div class="flex flex-col items-center justify-center gap-2 group cursor-pointer">
+<div class="w-20 h-20 rounded-full border-2 border-primary/20 bg-primary/10 flex items-center justify-center hover:bg-primary/20 transition-all">
+<span class="text-xs font-bold text-primary">01</span>
+</div>
+<span class="text-[10px] text-gray-400">2 SEATS</span>
+</div>
+<div class="flex flex-col items-center justify-center gap-2">
+<div class="w-24 h-16 rounded-lg bg-gray-200 dark:bg-gray-800 flex items-center justify-center cursor-not-allowed">
+<span class="text-xs font-bold text-gray-400">02</span>
+</div>
+<span class="text-[10px] text-gray-400">4 SEATS</span>
+</div>
+<div class="flex flex-col items-center justify-center gap-2 group cursor-pointer">
+<div class="w-24 h-16 rounded-lg border-2 border-primary/20 bg-primary/10 flex items-center justify-center hover:bg-primary/20 transition-all">
+<span class="text-xs font-bold text-primary">03</span>
+</div>
+<span class="text-[10px] text-gray-400">4 SEATS</span>
+</div>
+<div class="flex flex-col items-center justify-center gap-2 group cursor-pointer">
+<div class="w-32 h-16 rounded-xl border-2 border-primary/20 bg-primary/10 flex items-center justify-center hover:bg-primary/20 transition-all">
+<span class="text-xs font-bold text-primary">04</span>
+</div>
+<span class="text-[10px] text-gray-400">6 SEATS</span>
+</div>
+<!-- Row 2 -->
+<div class="flex flex-col items-center justify-center gap-2 group cursor-pointer">
+<div class="w-20 h-20 rounded-full border-2 border-primary/20 bg-primary/10 flex items-center justify-center hover:bg-primary/20 transition-all">
+<span class="text-xs font-bold text-primary">09</span>
+</div>
+<span class="text-[10px] text-gray-400">2 SEATS</span>
+</div>
+<div class="flex flex-col items-center justify-center gap-2">
+<div class="w-24 h-16 rounded-lg bg-gray-200 dark:bg-gray-800 flex items-center justify-center cursor-not-allowed">
+<span class="text-xs font-bold text-gray-400">10</span>
+</div>
+<span class="text-[10px] text-gray-400">4 SEATS</span>
+</div>
+<div class="flex flex-col items-center justify-center gap-2 group cursor-pointer scale-110">
+<div class="w-24 h-16 rounded-lg border-4 border-accent-gold bg-accent-gold flex items-center justify-center shadow-lg">
+<span class="text-xs font-bold text-primary">12</span>
+</div>
+<span class="text-[10px] text-accent-gold font-bold">SELECTED</span>
+</div>
+<div class="flex flex-col items-center justify-center gap-2 group cursor-pointer">
+<div class="w-24 h-16 rounded-lg border-2 border-primary/20 bg-primary/10 flex items-center justify-center hover:bg-primary/20 transition-all">
+<span class="text-xs font-bold text-primary">14</span>
+</div>
+<span class="text-[10px] text-gray-400">4 SEATS</span>
+</div>
+<!-- Row 3 -->
+<div class="flex flex-col items-center justify-center gap-2 group cursor-pointer">
+<div class="w-32 h-16 rounded-xl border-2 border-primary/20 bg-primary/10 flex items-center justify-center hover:bg-primary/20 transition-all">
+<span class="text-xs font-bold text-primary">21</span>
+</div>
+<span class="text-[10px] text-gray-400">6 SEATS</span>
+</div>
+<div class="flex flex-col items-center justify-center gap-2 group cursor-pointer">
+<div class="w-20 h-20 rounded-full border-2 border-primary/20 bg-primary/10 flex items-center justify-center hover:bg-primary/20 transition-all">
+<span class="text-xs font-bold text-primary">22</span>
+</div>
+<span class="text-[10px] text-gray-400">2 SEATS</span>
+</div>
+<div class="flex flex-col items-center justify-center gap-2 group cursor-pointer">
+<div class="w-20 h-20 rounded-full border-2 border-primary/20 bg-primary/10 flex items-center justify-center hover:bg-primary/20 transition-all">
+<span class="text-xs font-bold text-primary">23</span>
+</div>
+<span class="text-[10px] text-gray-400">2 SEATS</span>
+</div>
+<div class="flex flex-col items-center justify-center gap-2 group cursor-pointer">
+<div class="w-24 h-16 rounded-lg border-2 border-primary/20 bg-primary/10 flex items-center justify-center hover:bg-primary/20 transition-all">
+<span class="text-xs font-bold text-primary">24</span>
+</div>
+<span class="text-[10px] text-gray-400">4 SEATS</span>
+</div>
+</div>
+<!-- Window Representation -->
+<div class="absolute right-0 top-1/4 bottom-1/4 w-2 bg-blue-100/40 border-l border-blue-200 flex items-center justify-center">
+<span class="rotate-90 text-[10px] font-bold text-blue-300 uppercase tracking-widest">Large Window View</span>
+</div>
+<!-- Entrance -->
+<div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-32 h-2 bg-primary/20 flex items-center justify-center">
+<span class="text-[8px] font-bold text-primary uppercase">Main Entrance</span>
+</div>
+</div>
+<div class="mt-6 flex justify-between items-center text-sm">
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined">info</span>
+<span>Note: For groups larger than 6, please call us directly.</span>
+</div>
+<div class="flex gap-4">
+<div class="bg-cover bg-center size-24 rounded-lg border border-primary/10" data-alt="Sophisticated Italian restaurant dining room with warm lighting" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBPBVKVOlk4vR89_7d5XB5U-66PaBPAJETKsw_eiCh9YcqMLBR7jHpmGPL_l0mWyf3ZIrizI3zgtwfR6pMAJiYTDrywESWFXNTvy_z_9mWRjDK4J_FHpvTdmBphfF1--tnZK8nRPV2YqjA1yB2EkSgF2_dfs7uFe_exvdrLnJ9RBOKMcUYFu0xM8OAJcXhRJqE_Cp2_DrsVDO6MjgSIj9uVA1Sb1WGnZWVmfaH0I6LzQob5Nbnuc0W2CeqxkT4rBYacNAlsyFhwfg');"></div>
+<div class="bg-cover bg-center size-24 rounded-lg border border-primary/10" data-alt="Traditional wood fire pizza oven in a rustic kitchen" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDn-NtOHsxzOgNXa10TVw-Nd-cRJd06MhDRxgoSSDF46QwN5gwx9YtpniERS4oLkFkXw7WD2ixCkpQGbX88uDoCK_bh66wR0FeAZSFw1YKoWe199nOfnbzmGRuZvZQJj6H3cony7podtIDJ5glP4muqPL2tK5DTB_Wr6H99X0hqBrxx3ADqRKsH2MtMxnYOMsUDlMSCT16N_BvJ2PVIqphYomX9eSw7I-IWhNQd8EbWaFmSDLqOCvxbRRHHl0MWwDN0gHJojHu4cQ');"></div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer Decorative Element -->
+<footer class="mt-10 px-10 py-8 border-t border-primary/10 text-center">
+<p class="font-display italic text-primary/60">"Mangia bene, ridi spesso, ama molto."</p>
+<p class="text-[10px] uppercase tracking-[0.2em] mt-2 opacity-50">La Trattoria Italian Heritage • Since 1984</p>
+</footer>
+</div>
+</div>
+</body></html>
